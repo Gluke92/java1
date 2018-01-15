@@ -1,8 +1,12 @@
-function whoAmI(name = "Mo", age = 24) {
+function whoAmI(name, age) {
+    if (!age || !name) {
+       throw new Error('Age or Name was not entered.');
+    }
     const yob = yearOfBirth(age);
     console.log(`Hi, my name is ${name} and I'm ${age} years old.`);
-    console.log(`I was born in ${yob}.`);
+    console.log(`I was born in ${yob}.`); 
 }
+
 
 
 function yearOfBirth(age)
@@ -14,7 +18,7 @@ function yearOfBirth(age)
     return 2018 - age;
 }
 try {
-whoAmI('Zhou', -25);
+whoAmI("George");
 }
 catch (e) {
     console.error(e.message);
